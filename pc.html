@@ -3997,7 +3997,7 @@ height:100%;">
  * 1) Deploy Google Apps Script as Web App
  * 2) Replace the placeholder URL below with your Web App URL
  */
-window.FIXPOWER_CONTACT_ENDPOINT = window.FIXPOWER_CONTACT_ENDPOINT || "YOUR_WEB_APP_URL_HERE";
+window.FIXPOWER_CONTACT_ENDPOINT = window.FIXPOWER_CONTACT_ENDPOINT || "https://script.google.com/macros/s/AKfycbw0kjsaQZvnQ_kaYUm8ajYinLP3iE_aYH-gpk3sAat5Dq5MKw6eTtlJtS672FrJanNm/exec";
 (function(){
   const endpoint = window.FIXPOWER_CONTACT_ENDPOINT;
   const form = document.getElementById("contactForm");
@@ -4013,7 +4013,7 @@ window.FIXPOWER_CONTACT_ENDPOINT = window.FIXPOWER_CONTACT_ENDPOINT || "YOUR_WEB
   form.addEventListener("submit", async function(ev){
     ev.preventDefault();
 
-    if(!endpoint || endpoint.indexOf("YOUR_WEB_APP_URL_HERE") !== -1){
+    if(!endpoint || endpoint.indexOf("https://script.google.com/macros/s/AKfycbw0kjsaQZvnQ_kaYUm8ajYinLP3iE_aYH-gpk3sAat5Dq5MKw6eTtlJtS672FrJanNm/exec") !== -1){
       showResult("送信先URL（Google Apps ScriptのWebアプリURL）が未設定です。HTML内の YOUR_WEB_APP_URL_HERE を置き換えてください。");
       return;
     }
