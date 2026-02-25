@@ -3999,7 +3999,7 @@ height:100%;">
  */
 window.FIXPOWER_CONTACT_ENDPOINT = window.FIXPOWER_CONTACT_ENDPOINT || "https://script.google.com/macros/s/AKfycbw0kjsaQZvnQ_kaYUm8ajYinLP3iE_aYH-gpk3sAat5Dq5MKw6eTtlJtS672FrJanNm/exec";
 (function(){
-  const endpoint = window.FIXPOWER_CONTACT_ENDPOINT;
+  // endpoint is read at submit time
   const form = document.getElementById("contactForm");
   const resultEl = document.getElementById("contactResult");
   if(!form) return;
@@ -4013,7 +4013,9 @@ window.FIXPOWER_CONTACT_ENDPOINT = window.FIXPOWER_CONTACT_ENDPOINT || "https://
   form.addEventListener("submit", async function(ev){
     ev.preventDefault();
 
-    if(!endpoint || endpoint.includes("YOUR_WEB_APP_URL_HERE") !== -1){
+    const endpoint = window.FIXPOWER_CONTACT_ENDPOINT;
+
+    if(!endpoint || endpoint.includes("YOUR_WEB_APP_URL_HERE")){
       showResult("送信先URL（Google Apps ScriptのWebアプリURL）が未設定です。HTML内の YOUR_WEB_APP_URL_HERE を置き換えてください。");
       return;
     }
