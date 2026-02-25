@@ -179,6 +179,81 @@
   transform: scale(0.985);
   filter: brightness(0.95);
 }
+
+/* === Contact Form Page (added) === */
+:root{
+  --fp-navy: #0F172A;
+  --fp-slate: #1E293B;
+  --fp-muted: #64748B;
+  --fp-border: #CBD5E1;
+  --fp-bg: #F8FAFC;
+  --fp-accent: #2563EB;
+}
+.contact-card{
+  background: rgba(255,255,255,.92);
+  border: 1px solid rgba(203,213,225,.75);
+  border-radius: 18px;
+  box-shadow: 0 14px 34px rgba(2,6,23,.12);
+  backdrop-filter: blur(3px);
+}
+.contact-form label{
+  display:block;
+  font-weight:700;
+  color: var(--fp-slate);
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+.contact-form .required{
+  color:#DC2626;
+  font-weight:800;
+  margin-left:6px;
+  font-size: 12px;
+}
+.contact-form input,
+.contact-form select,
+.contact-form textarea{
+  width:100%;
+  border:1px solid var(--fp-border);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 16px;
+  color: var(--fp-slate);
+  background: rgba(255,255,255,.98);
+}
+.contact-form textarea{ min-height: 110px; resize: vertical; }
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus{
+  outline: none;
+  border-color: rgba(37,99,235,.75);
+  box-shadow: 0 0 0 4px rgba(37,99,235,.18);
+}
+.contact-form .help{
+  color: var(--fp-muted);
+  font-size: 12px;
+  margin-top: 6px;
+}
+.contact-submit{
+  width:100%;
+  background: #FF7A00;
+  color:#fff;
+  font-weight: 800;
+  border-radius: 999px;
+  padding: 14px 18px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.16);
+}
+.contact-submit:disabled{ opacity: .7; cursor:not-allowed; }
+.contact-result{
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(37,99,235,.08);
+  border: 1px solid rgba(37,99,235,.22);
+  color: var(--fp-slate);
+  font-weight: 700;
+}
+.contact-hp{ position:absolute !important; left:-9999px !important; top:auto !important; width:1px !important; height:1px !important; overflow:hidden !important; }
+
 </style>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0H01RJNT6T"></script>
@@ -203,7 +278,7 @@ height:1280px;
     <img src="./images/sp/1_1_sp_image_1770955393701.png" class="max-w-none" style="width:100%;
 height:100%;">
       <!-- Clickable area for FV orange button (adjust left/top/width/height if needed) -->
-      <a class="cta-hotspot cta-hotspot--fv" href="https://docs.google.com/forms/d/e/1FAIpQLSc2JuQW2PnV5tClG-UP0YRk1GooNzqqVUWM9Eo0lXQidKRmCw/viewform?usp=header" target="_blank" rel="noopener" aria-label="お問い合わせフォームへ"
+      <a class="cta-hotspot cta-hotspot--fv" href="#contact" aria-label="お問い合わせフォームへ"
          style="position:absolute; left:53px; top:748px; width:307px; height:75px; display:block; z-index:9999; cursor:pointer;"></a>
 
 </div></div></section><section id="slide2" class="p-0 hide" style="height: 1146.5px;    background-color:rgba(255, 255, 255, 1); "><div class="contentWrapper mx-auto p-8" style="width: 720px;"><div class="" style="position:absolute;
@@ -271,7 +346,7 @@ height:1280px;
     <img src="./images/sp/9_1_sp_image_1770955396185.png" class="max-w-none" style="width:100%;
 height:100%;">
       <!-- Clickable area for 「まずは無料シミュレーションから」 (adjust left/top/width/height if needed) -->
-      <a class="cta-hotspot" href="https://docs.google.com/forms/d/e/1FAIpQLSc2JuQW2PnV5tClG-UP0YRk1GooNzqqVUWM9Eo0lXQidKRmCw/viewform?usp=header" target="_blank" rel="noopener" aria-label="無料シミュレーションフォームへ"
+      <a class="cta-hotspot" href="#contact" aria-label="無料シミュレーションフォームへ"
          style="position:absolute; left:132px; top:804px; width:455px; height:53px; display:block; z-index:9999; cursor:pointer;"></a>
 
 </div></div></section><section id="slide10" class="p-0 hide" style="height: 1280px;    background-color:rgba(255, 255, 255, 1); "><div class="contentWrapper mx-auto p-8" style="width: 720px;"><div class="" style="position:absolute;
@@ -283,6 +358,135 @@ height:1280px;
     <img src="./images/sp/10_1_sp_image_1770955396474.jpg" class="max-w-none" style="width:100%;
 height:100%;">
 </div></div></section>
+
+<section id="slide11" class="p-0 hide" style="height: 1280px; background-color:rgba(248, 250, 252, 1);">
+  <div class="contentWrapper mx-auto p-8" style="width: 720px;">
+    <div style="position:absolute; left:0; top:0; width:720px; height:1280px;">
+      <img src="./images/common/contact-bg.png" class="max-w-none" style="width:100%; height:100%; object-fit:cover;">
+    </div>
+    <div style="position:absolute; left:0; top:0; width:720px; height:1280px; background-color:rgba(248, 250, 252, 0.92);"></div>
+
+    <div id="contact" style="position:absolute; left:0; top:0; width:1px; height:1px;"></div>
+
+    <div class="flex flex-col items-center" style="position:relative; height:100%; padding: 62px 26px 30px;">
+      <div style="text-align:center; margin-bottom: 16px;">
+        <div style="font-weight:800; color:rgba(30, 41, 59, 1); font-size:50px; font-family:'Noto Sans JP'; line-height:1.15;">お申し込み（無料）</div>
+        <div style="margin-top:10px; color:rgba(100, 116, 139, 1); font-size:22px; font-family:'Noto Sans JP'; line-height:1.5;">
+          必要事項をご入力ください。<br>送信後、ご入力のメールアドレス宛に自動返信メールをお送りします。
+        </div>
+      </div>
+
+      <div class="contact-card" style="width: 100%; padding: 22px 22px; max-height: 980px; overflow:auto;">
+        <form id="contactForm" class="contact-form">
+          <!-- Honeypot (do not fill) -->
+          <label class="contact-hp">会社名（入力しないでください）
+            <input class="contact-hp" type="text" name="company_hp" autocomplete="off">
+          </label>
+
+          <div class="space-y-4">
+            <div>
+              <label style="font-size:20px;">お名前<span class="required">必須</span></label>
+              <input type="text" name="name" required placeholder="例）山田 太郎" style="font-size:22px; padding:16px 16px;">
+            </div>
+            <div>
+              <label style="font-size:20px;">メールアドレス<span class="required">必須</span></label>
+              <input type="email" name="email" required placeholder="例）taro@example.com" style="font-size:22px; padding:16px 16px;">
+            </div>
+            <div>
+              <label style="font-size:20px;">会社名<span class="required">必須</span></label>
+              <input type="text" name="company" required placeholder="例）株式会社〇〇" style="font-size:22px; padding:16px 16px;">
+            </div>
+            <div>
+              <label style="font-size:20px;">ご希望の連絡時間帯<span class="required">必須</span></label>
+              <select name="slot" required style="font-size:22px; padding:16px 16px;">
+                <option value="">選択してください</option>
+                <option value="なるべく早く">なるべく早く</option>
+                <option value="平日午前">平日午前</option>
+                <option value="平日午後">平日午後</option>
+                <option value="いつでも">いつでも</option>
+              </select>
+            </div>
+            <div>
+              <label style="font-size:20px;">電話番号（任意）</label>
+              <input type="tel" name="tel" placeholder="例）090-1234-5678" style="font-size:22px; padding:16px 16px;">
+            </div>
+            <div>
+              <label style="font-size:20px;">会社住所：都道府県<span class="required">必須</span></label>
+              <select name="prefecture" required style="font-size:22px; padding:16px 16px;">
+                <option value="">選択してください</option>
+                <option value="北海道">北海道</option>
+<option value="青森県">青森県</option>
+<option value="岩手県">岩手県</option>
+<option value="宮城県">宮城県</option>
+<option value="秋田県">秋田県</option>
+<option value="山形県">山形県</option>
+<option value="福島県">福島県</option>
+<option value="茨城県">茨城県</option>
+<option value="栃木県">栃木県</option>
+<option value="群馬県">群馬県</option>
+<option value="埼玉県">埼玉県</option>
+<option value="千葉県">千葉県</option>
+<option value="東京都">東京都</option>
+<option value="神奈川県">神奈川県</option>
+<option value="新潟県">新潟県</option>
+<option value="富山県">富山県</option>
+<option value="石川県">石川県</option>
+<option value="福井県">福井県</option>
+<option value="山梨県">山梨県</option>
+<option value="長野県">長野県</option>
+<option value="岐阜県">岐阜県</option>
+<option value="静岡県">静岡県</option>
+<option value="愛知県">愛知県</option>
+<option value="三重県">三重県</option>
+<option value="滋賀県">滋賀県</option>
+<option value="京都府">京都府</option>
+<option value="大阪府">大阪府</option>
+<option value="兵庫県">兵庫県</option>
+<option value="奈良県">奈良県</option>
+<option value="和歌山県">和歌山県</option>
+<option value="鳥取県">鳥取県</option>
+<option value="島根県">島根県</option>
+<option value="岡山県">岡山県</option>
+<option value="広島県">広島県</option>
+<option value="山口県">山口県</option>
+<option value="徳島県">徳島県</option>
+<option value="香川県">香川県</option>
+<option value="愛媛県">愛媛県</option>
+<option value="高知県">高知県</option>
+<option value="福岡県">福岡県</option>
+<option value="佐賀県">佐賀県</option>
+<option value="長崎県">長崎県</option>
+<option value="熊本県">熊本県</option>
+<option value="大分県">大分県</option>
+<option value="宮崎県">宮崎県</option>
+<option value="鹿児島県">鹿児島県</option>
+<option value="沖縄県">沖縄県</option>
+              </select>
+            </div>
+            <div>
+              <label style="font-size:20px;">会社住所：市区町村<span class="required">必須</span></label>
+              <input type="text" name="city" required placeholder="例）福岡市博多区" style="font-size:22px; padding:16px 16px;">
+            </div>
+            <div>
+              <label style="font-size:20px;">ひとこと（任意）</label>
+              <textarea name="message" placeholder="例）検針票の用意が可能です。シミュレーション希望です。" style="font-size:22px; padding:16px 16px;"></textarea>
+              <div class="help" style="font-size:18px;">※ 送信後、自動返信メールが届かない場合は迷惑メールフォルダをご確認ください。</div>
+            </div>
+            <div>
+              <button type="submit" class="contact-submit" style="font-size:26px; padding:18px 18px;">無料で申し込む</button>
+              <div id="contactResult" class="contact-result hidden" style="font-size:20px;"></div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div style="margin-top:18px; color:rgba(148, 163, 184, 1); font-size:18px; font-family:'Noto Sans JP'; text-align:center;">
+        © Fix Power
+      </div>
+    </div>
+  </div>
+</section>
+
 </div> <!-- exWrapper -->
 <footer style="position:relative; padding: 0; margin:0 auto; height: 60px; display:block;">
     <div>
@@ -294,8 +498,60 @@ height:100%;">
 
 
 <script type="text/javascript">window.data = {"siteJsUrl":"https:\/\/assets.slideflow.me","scaledHeight":0,"scale":720,"pid":35714,"device":"sp","fontFamilies":[],"fontFamiliesParam":"","disableAnalysis":true}</script><script type="text/javascript">(()=>{var e={970:()=>{var e;["storage.googleapis.com"].includes(document.location.hostname)||document.location.hostname.match(/^.*\.slideflow\.me$/)||(e="/api/1/pages/view",$.ajax({type:"POST",url:"".concat("https://api.slideflow.me").concat(e),data:{pid:window.data.pid,device:window.data.device},dataType:"json"}))},872:()=>{var e=navigator.userAgent;if(!function(){if($("meta[name=viewport]").length)return!0;return!1}()){var t=$(window).innerWidth(),i=t/$("body").attr("slide-width"),a=i*$("body").attr("slide-height"),r=window.data.changeScale;!function(){if(e.indexOf("iPhone")>-1||e.indexOf("Android")>-1&&e.indexOf("Mobile")>-1||e.indexOf("iPad")>-1||e.indexOf("Android")>-1)return!0;return!1}()?r&&($("#exWrapper, #exFixbarWrapper").wrap('<div class="mx-auto" style="width:1280px; height:'.concat(window.data.scaledHeight,'px;">')),$("#exWrapper, #exFixbarWrapper").wrap('<div style="transform: scale('.concat(window.data.scale,'); transform-origin: top left; width: fit-content; height: 100vh;">'))):($("#exWrapper, #exFixbarWrapper").wrap('<div style="width:'.concat(t,"px; height:").concat(a,'px;">')),$("#exWrapper, #exFixbarWrapper").wrap('<div style="transform: scale('.concat(i,'); transform-origin: top left; width: fit-content; height: 100vh;">')))}function n(e,t){var i=$(e).closest("section"),a=$(i).offset().top,r=$(i).height(),n=$(e).offset().top,o=$(e).height(),s=$(e).parent("div").height(),f=$(e).parent("div").offset().top,c=100;if(t.is(".instagram-media"))var p=function(e){var t=$(e).height()?$(e).height():0,i=$(e).attr("height")?$(e).attr("height"):0;return Math.max(t,i)}(t);else if($(e).is(".iframeGoogleMapWrapper"))c=10;else if($(e).is(".iframeJstreamWrapper")){$(t).css("width","100%");p=h(t)}else if($(e).is(".iframeBownowWrapper")){p=function(e){var t=$(e).height()?$(e).height():0,i=$(e).attr("height")?$(e).attr("height"):0;return Math.max(t,i)}(t);c=10}else if($(e).is(".iframeHubspotWrapper")){p=function(e){var t=$(e).height()?$(e).height():0,i=$(e).attr("height")?$(e).attr("height"):0,a=$(e).parent().height()?$(".hbspt-form").height():0;return Math.max(t,i,a)}(t);c=10}else if($(e).is(".iframeSalesforcePardotWrapper")){p=function(e){var t=$(e).height()?$(e).height():0,i=$(e).attr("height")?$(e).attr("height"):0;return Math.max(t,i)}(t);c=10}else if($(e).is(".iframeSatoriCreativeWrapper")){p=h(t);c=30}else if($(e).is(".iframeActiBookContentsWrapper")){p=function(e){var t=$(e).height()?$(e).height():0,i=$(e).attr("height")?$(e).attr("height"):0;return Math.max(t,i)}(t);c=30}else if($(e).is(".iframeActiBookFormWrapper")){p=function(e){var t=$(e).height()?$(e).height():0,i=$(e).attr("height")?$(e).attr("height"):0;return Math.max(t,i)}(t);c=30,$(e).children("iframe").removeAttr("height"),$(e).children("iframe").css({height:"","max-height":""})}else if($(e).is(".iframeIzanaiWrapper")){p=function(e){var t=$(e).height()?$(e).height():0,i=$(e).attr("height")?$(e).attr("height"):0;return Math.max(t,i)}(t);c=30}else p=h(t);p&&((p>o||p>s)&&(t.is(".instagram-media")?(o=p+50,s=p+50,$(e).height(o),$(e).parent("div").height(s)):$(e).is(".iframeGoogleMapWrapper")?(o=s+10,n=f+10,$(t).height(s),$(e).height(o),$(e).offset({top:n})):$(e).is(".iframeGoogleFormWrapper")?(o=p+100,s=p+100,$(t).height(o),$(e).height(o),$(e).parent("div").height(s)):$(e).is(".iframeJstreamWrapper")||$(e).is(".iframeBownowWrapper")||$(e).is(".iframeHubspotWrapper")||$(e).is(".iframeSalesforcePardotWrapper")||$(e).is(".iframeSatoriCreativeWrapper")||$(e).is(".iframeActiBookContentsWrapper")||$(e).is(".iframeActiBookFormWrapper")||$(e).is(".iframeIzanaiWrapper")?(o=p,s=p,$(e).height(o),$(e).parent("div").height(s)):(o=p+10,s=p+10,$(t).height(p),$(e).height(o),$(e).parent("div").height(s))),n+o+10>a+r&&$(i).height(n-a+o+c))}function h(e){var t=$(e).get(0).height?$(e).get(0).height:0,i=$(e).get(0).scrollHeight?$(e).get(0).scrollHeight:0;return Math.max(t,i)}$(window).on("load scroll",(function(){$("section").each((function(){var e=$(this).offset().top,t=$(window).scrollTop(),i=$("body").css("zoom")||1,a=100*i,r=$(this).height()>a?a:0,n=$(window).height();i<.8&&(n+=n*i),t>e-n+r&&$(this).hasClass("hide")&&($(this).removeClass("hide"),$(this).addClass("show"))}))})),$((function(){var e=window.data.fontFamiliesParam;if(e){window.WebFontConfig={google:{api:"https://fonts.googleapis.com/css2",families:[e]},active:function(){sessionStorage.fonts=!0}};var t=document.createElement("script");t.src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js",t.type="text/javascript",t.async="true";var i=document.getElementsByTagName("script")[0];i.parentNode.insertBefore(t,i)}if($(document).on("click",'a[href^="#"]',(function(){var e=0,t=$(this).attr("href"),i=$(t);if($(i).length){var a=$(i).closest("section");$(a).hasClass("hide")&&(e=-100);var r=$(i).offset().top+e;$("body,html").animate({scrollTop:r},400,"swing")}return!1})),$(".iframeWrapper").each((function(){var e=$(this),t=$(this).find("iframe");t.length&&setInterval((function(){var i=$(e).closest("section"),a=$(i).offset().top,r=$(i).height(),n=$(e).offset().top,o=$(e).height(),s=($(e).parent("div").height(),h(t));s&&(s>o+200&&($(t).height(s+200),$(e).height(s+200),$(e).parent("div").height(s+300)),n+s+200>a+r&&$(i).height(n-a+s+200))}),1e3)})),$(".iframeYoutubeWrapper").each((function(){var e=$(this),t=$(this).find("iframe");t.length&&n(e,t)})),$(".iframeGoogleMapWrapper").each((function(){var e=$(this),t=$(this).find("iframe");t&&n(e,t)})),$(".iframeGoogleFormWrapper").each((function(){var e=$(this),t=$(this).find("iframe");t.length&&n(e,t)})),$(".iframeInstagramWrapper").each((function(){var e=$(this),t=$(this).find(".instagram-media");t.length&&setInterval((function(){n(e,t)}),1e3)})),"undefined"!=typeof twttr&&setInterval((function(){var e=$(".twitter-tweet, .twitter-timeline");$(e).each((function(){var e=this;setInterval((function(){var t=$(e).parent().closest("section");if($(t).length){var i=$(t).offset().top,a=$(t).height(),r=$(e).offset().top,n=$(e).height(),h=$(e).parent().closest("div");if($(h).length){$(h).parent().closest("div").width();if(n>$(h).parent().closest("div").height()&&($(h).height(n+10),$(h).parent("div").height(n+10)),r+n>i+a){var o=r-i+n;$(t).height(o+100)}}}}))}))}),1e3),$(".iframeJstreamWrapper").each((function(){var e=$(this);setInterval((function(){var t=$(e).find("iframe");t.length&&n(e,t)}),1e3,e)})),$(".iframeBownowWrapper").each((function(){var e=$(this);setInterval((function(){var t=$(e).find("iframe");t.length&&n(e,t)}),1e3,e)})),$(".iframeHubspotWrapper").each((function(){var e=$(this);setInterval((function(){var t=$(e).find("iframe");t.length&&n(e,t)}),1e3,e)})),$(".iframeSalesforcePardotWrapper").each((function(){var e=$(this);setInterval((function(){var t=$(e).find("iframe");t.length&&n(e,t)}),1e3,e)})),$(".iframeSatoriCreativeWrapper").each((function(){var e=$(this);setInterval((function(){var t=$(e).find("#satori__creative_container");t.length&&n(e,t)}),1e3,e)})),$(".iframeActiBookContentsWrapper").each((function(){var e=$(this);setInterval((function(){var t=$(e).find("iframe");t.length&&n(e,t)}),1e3,e)})),$(".iframeActiBookFormWrapper").each((function(){var e=$(this);setInterval((function(){var t=$(e).find("iframe");t.length&&n(e,t)}),1e3,e)})),$(".iframeIzanaiWrapper").each((function(){var e=$(this);setInterval((function(){var t=$(e).find("iframe");t.length&&n(e,t)}),1e3,e)})),document.URL.match(/^.*?preview=true$/)){var a=$("body").attr("slide-width");$("body").addClass("dragscroll"),$("body").css("cursor","grab"),$("#exWrapper").wrap('<div id="dragArea"></div>'),$("#dragArea").width(a),$("#dragArea").css("margin","auto"),$.getScript("https://cdnjs.cloudflare.com/ajax/libs/dragscroll/0.0.8/dragscroll.min.js")}})),$('div[style^="position:absolute"]').each((function(e,t){var i=$(t).outerHeight(),a=0,r=0;if($(t).children("p, h2").each((function(e,t){a+=$(t).height(),$(t).children("span").each((function(e,t){var i=parseFloat($(t).css("font-size"));i>r&&(r=i)}))})),a>i)for(var n=0,h=0,o=0,s=0,f=0;f<10*r;f++)if($(t).find("span").each((function(e,t){(n=parseFloat($(t).css("font-size")))>10&&$(t).css("font-size",n-.1+"px"),(h=parseFloat($(t).parent("p").css("line-height")))>n&&$(t).parent("p").css("line-height",h-.1+"px")})),s=o,o=0,$(t).children("p, h2").each((function(e,t){o+=$(t).height()})),i>=o||s===o){$(t).addClass("autofit");break}}))}},t={};function i(a){var r=t[a];if(void 0!==r)return r.exports;var n=t[a]={exports:{}};return e[a](n,n.exports,i),n.exports}i(872),i(970)})();</script>
+
+<script>
+/* === Contact Form submit handler (added) ===
+ * 1) Deploy Google Apps Script as Web App
+ * 2) Replace the placeholder URL below with your Web App URL
+ */
+window.FIXPOWER_CONTACT_ENDPOINT = window.FIXPOWER_CONTACT_ENDPOINT || "https://script.google.com/macros/s/AKfycbw0kjsaQZvnQ_kaYUm8ajYinLP3iE_aYH-gpk3sAat5Dq5MKw6eTtlJtS672FrJanNm/exec";
+(function(){
+  const endpoint = window.FIXPOWER_CONTACT_ENDPOINT;
+  const form = document.getElementById("contactForm");
+  const resultEl = document.getElementById("contactResult");
+  if(!form) return;
+
+  function showResult(msg){
+    if(!resultEl) return;
+    resultEl.textContent = msg;
+    resultEl.classList.remove("hidden");
+  }
+
+  form.addEventListener("submit", async function(ev){
+    ev.preventDefault();
+
+    if(!endpoint || endpoint.indexOf("https://script.google.com/macros/s/AKfycbw0kjsaQZvnQ_kaYUm8ajYinLP3iE_aYH-gpk3sAat5Dq5MKw6eTtlJtS672FrJanNm/exec") !== -1){
+      showResult("送信先URL（Google Apps ScriptのWebアプリURL）が未設定です。HTML内の YOUR_WEB_APP_URL_HERE を置き換えてください。");
+      return;
+    }
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn ? submitBtn.textContent : "";
+    if(submitBtn){ submitBtn.disabled = true; submitBtn.textContent = "送信中..."; }
+
+    try{
+      const fd = new FormData(form);
+      fd.append("page_url", location.href);
+      fd.append("user_agent", navigator.userAgent);
+
+      // NOTE: mode:"no-cors" でCORSエラー回避（レスポンスは読めませんが送信はできます）
+      await fetch(endpoint, { method: "POST", mode: "no-cors", body: fd });
+
+      form.reset();
+      showResult("送信ありがとうございました。ご入力のメールアドレス宛に自動返信メールを送信しました。");
+      // (任意) 送信完了位置へスクロール
+      try{ resultEl && resultEl.scrollIntoView({behavior:"smooth", block:"center"}); }catch(e){}
+    }catch(e){
+      showResult("送信に失敗しました。通信環境をご確認のうえ、再度お試しください。");
+    }finally{
+      if(submitBtn){ submitBtn.disabled = false; submitBtn.textContent = originalText || "無料で申し込む"; }
+    }
+  });
+})();
+</script>
+
   <!-- Floating contact button (added) -->
-  <a class="floating-contact-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSc2JuQW2PnV5tClG-UP0YRk1GooNzqqVUWM9Eo0lXQidKRmCw/viewform?usp=header" target="_blank" rel="noopener" aria-label="お問い合わせフォームへ">お問い合わせ</a>
+  <a class="floating-contact-btn" href="#contact" aria-label="お問い合わせフォームへ">お問い合わせ</a>
 
 </body>
 </html>
