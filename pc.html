@@ -4013,7 +4013,7 @@ window.FIXPOWER_CONTACT_ENDPOINT = window.FIXPOWER_CONTACT_ENDPOINT || "https://
   form.addEventListener("submit", async function(ev){
     ev.preventDefault();
 
-    if(!endpoint || endpoint.indexOf("https://script.google.com/macros/s/AKfycbw0kjsaQZvnQ_kaYUm8ajYinLP3iE_aYH-gpk3sAat5Dq5MKw6eTtlJtS672FrJanNm/exec") !== -1){
+    if(!endpoint || endpoint.indexOf("YOUR_WEB_APP_URL_HERE") !== -1){
       showResult("送信先URL（Google Apps ScriptのWebアプリURL）が未設定です。HTML内の YOUR_WEB_APP_URL_HERE を置き換えてください。");
       return;
     }
