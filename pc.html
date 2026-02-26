@@ -3876,7 +3876,7 @@ height:100%;">
     <div class="flex flex-col items-center" style="position:relative; padding: 58px 120px 80px;">
       <div style="text-align:center; margin-bottom: 18px;">
         <div style="font-weight:800; color:rgba(30, 41, 59, 1); font-size:44px; font-family:'Noto Sans JP'; line-height:1.2;">お申し込み（無料）</div>
-        <div style="margin-top:10px; color:rgba(100, 116, 139, 1); font-size:16px; font-family:'Noto Sans JP';">必要事項をご入力ください。送信後、ご入力のメールアドレス宛に自動返信メールをお送りします。</div>
+        <div style="margin-top:10px; color:rgba(100, 116, 139, 1); font-size:16px; font-family:'Noto Sans JP';">必要事項をご入力ください。</div>
       </div>
 
       <div class="contact-card" style="width: 820px; padding: 26px 28px;">
@@ -3963,7 +3963,6 @@ height:100%;">
             <div class="col-span-2">
               <label>ひとこと（任意）</label>
               <textarea name="message" placeholder="例）検針票の用意が可能です。シミュレーション希望です。"></textarea>
-              <div class="help">※ 送信後、自動返信メールが届かない場合は迷惑メールフォルダをご確認ください。</div>
             </div>
             <div class="col-span-2">
               <button type="submit" class="contact-submit">無料で申し込む</button>
@@ -4033,7 +4032,7 @@ window.FIXPOWER_CONTACT_ENDPOINT = window.FIXPOWER_CONTACT_ENDPOINT || "https://
       await fetch(endpoint, { method: "POST", mode: "no-cors", body: fd });
 
       form.reset();
-      showResult("送信ありがとうございました。ご入力のメールアドレス宛に自動返信メールを送信しました。");
+      showResult("送信ありがとうございました。");
       // (任意) 送信完了位置へスクロール
       try{ resultEl && resultEl.scrollIntoView({behavior:"smooth", block:"center"}); }catch(e){}
     }catch(e){
