@@ -1,44 +1,50 @@
 <?php
+// スマホ・タブレットは sp.html、PCは pc.html を返す
 
-// デバイス判定
-$agent = getUserAgent();
+$agent = getUserAgent(); // "sp" / "tablet" / "pc"
 
-if ($agent === 'pc') {
-    if (file_exists('pc.html')) {
-        $html = file_get_contents('pc.html');
-    } else {
-        if (file_exists('sp.html')) {
-            $html = file_get_contents('sp.html');
-        }
-    }
+// 優先して返したいファイルを決める
+$primary = ($agent === 'pc') ? 'pc.html' : 'sp.html';
+$fallback = ($primary === 'pc.html') ? 'sp.html' : 'pc.html';
+
+// ファイル読み込み（存在しない場合はフォールバック）
+if (file_exists($primary)) {
+    $html = file_get_contents($primary);
+} elseif (file_exists($fallback)) {
+    $html = file_get_contents($fallback);
 } else {
-    if (file_exists('sp.html')) {
-        $html = file_get_contents('sp.html');
-    } else {
-        if (file_exists('pc.html')) {
-            $html = file_get_contents('pc.html');
-        }
-    }
+    http_response_code(404);
+    echo "Not Found";
+    exit;
 }
 
 echo $html;
-exit();
+exit;
 
 function getUserAgent()
 {
-    //ユーザーエージェントの取得
-    $ua = $_SERVER['HTTP_USER_AGENT'];
+    $ua = $_SERVER['HTTP_USER_AGENT'] ?? '';
 
-    //スマホ（iPhone、Android、WindowsPhone）
-    if ((strpos($ua, 'Android') !== false) &&
-        (strpos($ua, 'Mobile') !== false) ||
+    // iPadOS 13+ は UA が Mac っぽくなることがあるので、必要なら JS 併用が確実。
+    // ここではシンプルにUA文字列ベースで判定。
+
+    // ---- スマホ ----
+    if (
+        (strpos($ua, 'Android') !== false && strpos($ua, 'Mobile') !== false) ||
         (strpos($ua, 'iPhone') !== false) ||
-        (strpos($ua, 'Windows Phone') !== false)) {
+        (strpos($ua, 'Windows Phone') !== false)
+    ) {
         return "sp";
-    } elseif ((strpos($ua, 'Android') !== false) ||
-        (strpos($ua, 'iPad') !== false)) {
-        return 'tablet';
-    } else {
-        return "pc";
     }
+
+    // ---- タブレット（Androidタブレット / iPad）----
+    if (
+        (strpos($ua, 'Android') !== false && strpos($ua, 'Mobile') === false) ||
+        (strpos($ua, 'iPad') !== false)
+    ) {
+        return "tablet";
+    }
+
+    // ---- PC ----
+    return "pc";
 }

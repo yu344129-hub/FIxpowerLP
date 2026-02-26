@@ -11,8 +11,25 @@
   <link rel="manifest" href="./images/common/site.webmanifest">
   <meta name="theme-color" content="#0F172A">
   <script>
-    const isSP = window.matchMedia("(max-width: 768px)").matches;
-    location.replace(isSP ? "./sp.html" : "./pc.html");
+    // ---- 強制切替（デバッグ用）: ?view=sp / ?view=pc ----
+    const params = new URLSearchParams(location.search);
+    const forced = params.get("view");
+    if (forced === "sp") location.replace("./sp.html");
+    if (forced === "pc") location.replace("./pc.html");
+
+    // ---- 端末判定 ----
+    const ua = navigator.userAgent || "";
+    const isIpad = (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1) || /iPad/.test(ua);
+    const isAndroidTablet = /Android/.test(ua) && !/Mobile/.test(ua); // Android で Mobile が無い=タブレット判定
+    const isTablet = isIpad || isAndroidTablet;
+
+    // スマホ判定（幅ベース）
+    const isPhone = window.matchMedia("(max-width: 768px)").matches;
+
+    // 要件：スマホ・タブレット → sp.html / それ以外(PC) → pc.html
+    const useSp = isPhone || isTablet;
+
+    location.replace(useSp ? "./sp.html" : "./pc.html");
   </script>
   <noscript>
     <meta http-equiv="refresh" content="0; url=./pc.html">
